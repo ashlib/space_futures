@@ -1,4 +1,6 @@
+
 //draw flashlight and sync to mouse
+//buckets go faster..
 //music??
 
 state = 0;
@@ -29,7 +31,7 @@ function preload() {
 
 	riddleFont = loadFont("ComicRelief.ttf");
 
-	bottom = loadImage("https://ashlib.github.io/space_futures/orb bottom.png");
+	bottom = loadImage("orb_bottom.png");
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
 	proph1 = loadImage("Raghnall.png");
@@ -246,7 +248,7 @@ function winRag() {
     text("What an excellent brain you have! \n You manage to open the grimiore without going insane. \nNow the scholars can get to work. \n\nClick mouse to head to Bazalis.",0,0);
 		pop();
 
-		timer2 = 3600;
+		timer1 = 3600;
 	}
 	}
 
@@ -399,7 +401,7 @@ function winBaz() {
 		}
 	}
 
-	if (numberOfCompleteBuckets >= 3) {
+	if (numberOfCompleteBuckets >= 5) {
 		allBucketsComplete = true;
 	}
 
@@ -652,7 +654,6 @@ var Bucket = function(startX, startY) {
 	this.position = createVector(startX, startY);
 	this.displayPosition = createVector(startX, startY);
 	this.direction = createVector(1,1);
-	this.speed = 2;
 	this.bucketComplete = false;
 }
 
