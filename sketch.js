@@ -6,7 +6,6 @@
 state = 0;
 
 var b, g;
-var bottom;
 var bridge;
 var bucket;
 var leftHeld, rightHeld, upHeld, downHeld;
@@ -31,7 +30,6 @@ function preload() {
 
 	riddleFont = loadFont("ComicRelief.ttf");
 
-	bottom = loadImage("orb_bottom.png");
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
 	proph1 = loadImage("Raghnall.png");
