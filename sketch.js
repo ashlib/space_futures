@@ -26,10 +26,10 @@ var timer3 = 30;
 var buckets = [];
 
 function preload() {
-	
+
 	riddleFont = loadFont("ComicRelief.ttf");
-	
-	bottom = loadImage("orb_bottom.png");
+
+	bottom = loadImage("https://ashlib.github.io/space_futures/orb bottom.png");
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
 	proph1 = loadImage("Raghnall.png");
@@ -38,10 +38,10 @@ function preload() {
 	sword = loadImage("sword.png");
 	tower = loadImage("tower.png");
 }
-	
+
 function setup() {
 	createCanvas(1280,720);
-	
+
 	x = width/2;
 	y = height/2;
 
@@ -69,13 +69,13 @@ function draw() {
 		background(175,225,250);
 		bazChal();
 		for (var i = 0; i < buckets.length; i++) {
-			buckets[i].display();		
+			buckets[i].display();
 		winBaz();
 		loseBaz();
-		activateKeys();	
+		activateKeys();
 	}
 	}
-		
+
 	if (state==4) {
 		background(0);
 		thadChal();
@@ -83,26 +83,26 @@ function draw() {
 		loseThad();
 }
 	}
-		
+
 function homeScreen() {
 	g.addStar();
   g.run();
-	
+
 	fill(255);
 	textAlign(CENTER);
 	textSize(30);
 	text("Hello Chosen One! \nThe Age of Darkness is here and the Prophets \nmust prepare for what is to come. \nYou have been prophesized to stop the Age of Darkness, \nbut not without a few tests first. \nTo prove yourself you must successfully complete \n3 challenges set by the Prophets themselves. \nFail and doom the world! \nAre your ready to embark on your quest? \nCLICK MOUSE TO START ", width/2, y)
-  
+
   y = y - 0.5;
 	if (y < -350) {
-		y = height; 
+		y = height;
 	}
 }
 
 function planets() {
 	g.addStar();
   g.run();
-	
+
 	push();
 	fill(255);
 	textAlign(CENTER);
@@ -110,14 +110,14 @@ function planets() {
 	translate(width/2, 75)
 	text("Welcome to the DaVinci Galaxy, the universe of The Prophets!", 0,0)
 	pop();
-	
+
 	push();
 	fill(59,122,87);
 	noStroke();
 	translate(width*0.15, height/2);
 	ellipse(0,0,100,100);
-	pop();	
-	
+	pop();
+
 	push();
 	fill(255);
 	textAlign(CENTER);
@@ -125,14 +125,14 @@ function planets() {
 	translate(width*0.15, height*0.65)
 	text("Ragnahla \nFounded by Raghnall the Wise in the Yr 4067",0,0);
 	pop();
-	
+
 	push();
 	fill(178,132,190);
 	noStroke();
 	translate(width/2, height/2);
 	ellipse(0,0,100,100);
 	pop();
-	
+
 	push();
 	fill(255);
 	textAlign(CENTER);
@@ -140,14 +140,14 @@ function planets() {
 	translate(width/2, height*0.65)
 	text("Bazalis \nFounded by Bazala the Generous in the Yr 3020",0,0);
 	pop();
-	
+
 	push();
 	fill(196,98,16);
 	noStroke();
 	translate(width*0.85, height/2);
 	ellipse(0,0,100,100);
 	pop();
-	
+
 	push();
 	fill(255);
 	textAlign(CENTER);
@@ -155,7 +155,7 @@ function planets() {
 	translate(width*0.85, height*0.65)
 	text("Thadius \nFounded by Thaddia the Valient in the Yr 5117",0,0);
 	pop();
-	
+
 	push();
 	fill(255,0,0);
 	stroke(255,0,0);
@@ -165,18 +165,18 @@ function planets() {
 	pop();
 }
 
-function ragChal() {	
+function ragChal() {
 	g.addStar();
   g.run();
-	
+
 	push();
 	imageMode(CENTER);
 	translate(width/2,height/2);
 	image(tower,0,0,1280,850);
-	pop();	
-	
+	pop();
+
 	image(proph1,0,0,175,200);
-	
+
 	push();
 	fill(255);
 	noStroke();
@@ -195,7 +195,7 @@ function ragChal() {
 	translate(width*0.85, height*0.5)
 	text("A murderer is condemned to death. \nHe has to choose between \nthree rooms. The first is full of \nraging fires, the second is full of \nassassins with loaded guns, and the \nthird is full of lions that haven't \neaten in 3 years. Which room is \nsafest for him?",0,0);
 	pop();
-	
+
 	push();
 	fill(0);
 	stroke(0);
@@ -204,8 +204,8 @@ function ragChal() {
 	textFont(riddleFont);
 	translate(width*0.85, height*0.85)
 	text("1. Fires     2. Assassins   3. Lions",0,0);
-	pop();	
-	
+	pop();
+
 	push();
 	fill(50);
 	noStroke();
@@ -213,14 +213,14 @@ function ragChal() {
 	translate(1250,25);
   text(timer1,0,0);
 	pop();
-	
-	if (frameCount % 60 == 0 && timer1 > 0) { 
+
+	if (frameCount % 60 == 0 && timer1 > 0) {
     timer1 --;
   }
 }
 
 function winRag() {
-	
+
 	if(key === '3') {
 		push();
 		fill(0);
@@ -228,7 +228,7 @@ function winRag() {
 		translate(width/2,height/2);
 		rect(0,0,width,height);
 		pop();
-		
+
 		push();
 		fill(0,255,0);
 		noStroke();
@@ -237,7 +237,7 @@ function winRag() {
 		translate(width/2,height/2);
     text("Eureka!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -245,11 +245,11 @@ function winRag() {
 		translate(width/2, height*0.6);
     text("What an excellent brain you have! \n You manage to open the grimiore without going insane. \nNow the scholars can get to work. \n\nClick mouse to head to Bazalis.",0,0);
 		pop();
-		
+
 		timer2 = 3600;
 	}
 	}
-	
+
 function loseRag() {
 
 	if(key === '1') {
@@ -259,7 +259,7 @@ function loseRag() {
 		translate(width/2,height/2);
 		rect(0,0,1280,720);
 		pop();
-		
+
 		push();
 		fill(255,0,0);
 		noStroke();
@@ -268,7 +268,7 @@ function loseRag() {
 		translate(width/2,height/2);
     text("YOU FAILED!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -276,7 +276,7 @@ function loseRag() {
 		translate(width/2, height*0.6);
 		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
 		pop();
-		
+
 		push();
 		fill(150);
 		noStroke();
@@ -286,7 +286,7 @@ function loseRag() {
 		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
 		pop();
 		}
-	
+
 	if(key === '2') {
 		push();
 		fill(0);
@@ -294,7 +294,7 @@ function loseRag() {
 		translate(width/2,height/2);
 		rect(0,0,1280,720);
 		pop();
-		
+
 		push();
 		fill(255,0,0);
 		noStroke();
@@ -303,7 +303,7 @@ function loseRag() {
 		translate(width/2,height/2);
     text("YOU FAILED!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -311,7 +311,7 @@ function loseRag() {
 		translate(width/2, height*0.6);
 		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
 		pop();
-		
+
 		push();
 		fill(150);
 		noStroke();
@@ -321,7 +321,7 @@ function loseRag() {
 		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
 		pop();
 		}
-	
+
 	if (timer1 == 0) {
 		push();
 		fill(0);
@@ -329,7 +329,7 @@ function loseRag() {
 		translate(width/2,height/2);
 		rect(0,0,1280,720);
 		pop();
-		
+
 		push();
 		fill(255,0,0);
 		noStroke();
@@ -338,7 +338,7 @@ function loseRag() {
 		translate(width/2,height/2);
     text("YOU FAILED!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -346,7 +346,7 @@ function loseRag() {
 		translate(width/2, height*0.6);
 		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
 		pop();
-		
+
 		push();
 		fill(150);
 		noStroke();
@@ -357,10 +357,10 @@ function loseRag() {
 		pop();
 	}
 }
-	
-function bazChal() {	
+
+function bazChal() {
 	image(proph2,0,0,175,200);
-	
+
 	push();
 	fill(0);
 	stroke(0);
@@ -374,8 +374,8 @@ function bazChal() {
 	imageMode(CENTER);
 	translate(width/2,height*0.8);
 	image(bridge,0,0,width,450);
-	pop();	
-	
+	pop();
+
 	push();
 	fill(0);
 	noStroke();
@@ -383,12 +383,12 @@ function bazChal() {
 	translate(1250,25);
   text(timer2,0,0);
 	pop();
-	
-	if (frameCount % 60 == 0 && timer2 > 0) { 
+
+	if (frameCount % 60 == 0 && timer2 > 0) {
 		 timer2 --;
   }
 }
-	
+
 function winBaz() {
 
 	var numberOfCompleteBuckets = 0;
@@ -402,7 +402,7 @@ function winBaz() {
 	if (numberOfCompleteBuckets >= 3) {
 		allBucketsComplete = true;
 	}
-	
+
 	if(allBucketsComplete == true) {
 		push();
 		fill(0);
@@ -410,7 +410,7 @@ function winBaz() {
 		translate(width/2,height/2);
 		rect(0,0,width,height);
 		pop();
-		
+
 		push();
 		fill(0,255,0);
 		noStroke();
@@ -419,7 +419,7 @@ function winBaz() {
 		translate(width/2,height/2);
     text("YOU'VE DONE IT!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -427,13 +427,13 @@ function winBaz() {
 		translate(width/2, height*0.6);
     text("Great job Chosen One! \nThe people of Bazalis have enough water for the upcoming doom. \n\nClick mouse to head to Thadius.",0,0);
 		pop();
-		
+
 		timer2 = 3600;
 	}
 }
-	
+
 function loseBaz() {
-	
+
   if (timer2 == 0) {
 		push();
 		fill(0);
@@ -441,7 +441,7 @@ function loseBaz() {
 		translate(width/2,height/2);
 		rect(0,0,1280,720);
 		pop();
-		
+
 		push();
 		fill(255,0,0);
 		noStroke();
@@ -450,7 +450,7 @@ function loseBaz() {
 		translate(width/2,height/2);
     text("YOU FAILED!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -458,7 +458,7 @@ function loseBaz() {
 		translate(width/2, height*0.6);
 		text("Looks like the bridge collapsed. \nYou can't save the universe now since you're dead...",0,0);
 		pop();
-		
+
 		push();
 		fill(150);
 		noStroke();
@@ -470,10 +470,10 @@ function loseBaz() {
 	  }
 }
 
-function thadChal() {	
-	
+function thadChal() {
+
 	image(proph3,0,0,175,200);
-	
+
 	push();
 	fill(255);
 	noStroke();
@@ -486,17 +486,17 @@ function thadChal() {
 	fill(255);
 	noStroke();
 	ellipse(x,y,100,100);
-	
+
 	push();
 	translate(width*0.9,height*0.7);
 	image(sword,0,0,150,200);
 	pop();
-	
+
 	if (upHeld) {y-=1.25;}
 	if (downHeld) {y+=1.25;}
 	if (leftHeld) {x-=1.25;}
 	if (rightHeld) {x+=1.25}
-	
+
 	push();
 	fill(255);
 	noStroke();
@@ -504,23 +504,23 @@ function thadChal() {
 	translate(1250,25);
   text(timer3,0,0);
 	pop();
-	
-	if (frameCount % 60 == 0 && timer3 > 0) { 
+
+	if (frameCount % 60 == 0 && timer3 > 0) {
     timer3 --;
   }
 }
 
 function winThad() {
-	
+
 	if (x >= width*0.95) {
-		if (y >= height*0.6) {		
+		if (y >= height*0.6) {
 		push();
 		fill(0);
 		rectMode(CENTER);
 		translate(width/2,height/2);
 		rect(0,0,width,height);
 		pop();
-		
+
 		push();
 		fill(0,255,0);
 		noStroke();
@@ -529,7 +529,7 @@ function winThad() {
 		translate(width/2,height/2);
     text("MISSION COMPLETE!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -537,7 +537,7 @@ function winThad() {
 		translate(width/2, height*0.6);
 		text("You've succesfully completed every challenge and \nnow we know for certain that you ARE the true Chosen One! \nGood thing too, becuse it only gets worse from here... \nThe Age of Darkness has come upon us!",0,0);
 		pop();
-		
+
 		push();
 		fill(150);
 		noStroke();
@@ -545,15 +545,15 @@ function winThad() {
 		textSize(20);
 		translate(width*0.9, height*0.9);
 		text("Reload to restart",0,0);
-		pop();	
-			
+		pop();
+
 		timer3 = 3600;
 		}
-}	
+}
 }
 
 function loseThad() {
-	
+
   if (timer3 == 0) {
 		push();
 		fill(0);
@@ -561,7 +561,7 @@ function loseThad() {
 		translate(width/2,height/2);
 		rect(0,0,1280,720);
 		pop();
-		
+
 		push();
 		fill(255,0,0);
 		noStroke();
@@ -570,7 +570,7 @@ function loseThad() {
 		translate(width/2,height/2);
     text("YOU FAILED!",0,0);
 		pop();
-		
+
 		push();
 		fill(255);
 		textAlign(CENTER);
@@ -578,7 +578,7 @@ function loseThad() {
 		translate(width/2, height*0.6);
 		text("OH NO! \nYou took too long. The ogre woke up and ate you.... \nYou're no use to use now that you're dead!",0,0);
 		pop();
-		
+
 		push();
 		fill(150);
 		noStroke();
@@ -590,54 +590,54 @@ function loseThad() {
 	}
 }
 
-function activateKeys (startX, startY, directionX, directionY) {  
-	
+function activateKeys (startX, startY, directionX, directionY) {
+
 	this.position = createVector(startX, startY);
 	this.direction = createVector(directionX, directionY);
-	
+
 	if (upHeld) { buckets[buckets.length - 1].move(0,-2);}
 	if (downHeld) { buckets[buckets.length - 1].move(0,2); }
 	if (leftHeld) { buckets[buckets.length - 1].move(-2,0);	}
 	if (rightHeld) { buckets[buckets.length - 1].move(2,0); }
 }
-	
+
 function keyPressed() {
-	
+
 	if(state == 1) {
-		if (key === 'z'){                                   
-		zKey = true; 
+		if (key === 'z'){
+		zKey = true;
 		state = 2;
 		}
 	}
-		
+
 	if(state == 2) {
-	if (key === "Enter"){ 
+	if (key === "Enter"){
 				state = 1;
 			}
 	}
-	
+
 	if(state == 3) {
-	if (key === "Enter"){ 
+	if (key === "Enter"){
 				state = 1;
 			}
 	}
-		
+
 	if(state == 4) {
-	if (key === "Enter"){ 
+	if (key === "Enter"){
 				state = 1;
 			}
 	}
-	
+
 	if (key === "ArrowUp"){upHeld = true; }
 	if (key === "ArrowDown"){ downHeld = true; }
 	if (key === "ArrowLeft"){ leftHeld = true; }
 	if (key === "ArrowRight"){ rightHeld = true; }
 }
-	
+
 function keyReleased() {
-	
+
 	if (key == "z"){ zKey = false; }
-	
+
 	if (key === "ArrowUp"){ upHeld = false; }
 	if (key === "ArrowDown"){ downHeld = false; }
 	if (key === "ArrowLeft"){ leftHeld = false; }
@@ -647,8 +647,8 @@ function keyReleased() {
 function mouseClicked() {
 	state++;
 }
-	
-var Bucket = function(startX, startY) {    
+
+var Bucket = function(startX, startY) {
 	this.position = createVector(startX, startY);
 	this.displayPosition = createVector(startX, startY);
 	this.direction = createVector(1,1);
@@ -656,16 +656,16 @@ var Bucket = function(startX, startY) {
 	this.bucketComplete = false;
 }
 
-Bucket.prototype.display = function(){ 
+Bucket.prototype.display = function(){
 	push();
 	this.displayPosition = p5.Vector.lerp(this.position, this.displayPosition, 0.9);
 	imageMode(CENTER);
 	translate(this.displayPosition.x, this.displayPosition.y);
 	image(bucket,0,0,50,75);
 	pop();
-	
+
 	if (this.position.x >= width*0.8) {
-		
+
 	if (this.bucketComplete == false) {
 			this.bucketComplete = true;
 			buckets.push(new Bucket(width*0.2,height*0.65));
@@ -677,7 +677,7 @@ Bucket.prototype.move = function(xMove, yMove) {
 	if (bucketComplete == false) {
 	this.position.x += xMove;
 	this.position.y += yMove;
-	
+
 	if (this.position.x < 0) { this.position.x = 0; }
 	if (this.position.x > width) { this.position.x = width; }
 	if (this.position.y < 0) { this.position.y = 0; }
@@ -685,7 +685,7 @@ Bucket.prototype.move = function(xMove, yMove) {
 	}
 }
 
-	
+
 function Star(lvector) {
     this.location = lvector;
     this.lifespan = 255.0;
@@ -703,7 +703,7 @@ Star.prototype.update = function() {
 Star.prototype.display = function() {
     stroke(255, this.lifespan);
     fill(255, this.lifespan);
-    ellipse(this.location.x, this.location.y, this.lifespan/75.0, this.lifespan/75.0);    
+    ellipse(this.location.x, this.location.y, this.lifespan/75.0, this.lifespan/75.0);
 }
 
 Star.prototype.isDead = function() {
@@ -729,9 +729,3 @@ Galaxy.prototype.run = function() {
         }
     }
 }
-
-
-
-
-
-
