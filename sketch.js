@@ -619,6 +619,7 @@ function keyPressed() {
 	if(state == 3) {
 	if (key === "Enter"){
 				state = 1;
+				timer2=30;
 			}
 	}
 
