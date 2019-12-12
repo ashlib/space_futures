@@ -515,15 +515,6 @@ function winThad() {
 		text("You've succesfully completed every challenge and \nnow we know for certain that you ARE the true Chosen One! \nGood thing too, becuse it only gets worse from here... \nThe Age of Darkness has come upon us!",0,0);
 		pop();
 
-		push();
-		fill(150);
-		noStroke();
-		textAlign(RIGHT);
-		textSize(20);
-		translate(width*0.9, height*0.9);
-		text("Reload to restart your quest.",0,0);
-		pop();
-
 		timer3 = 3600;
 		}
 }
@@ -554,6 +545,15 @@ function loseThad() {
 		textSize(25);
 		translate(width/2, height*0.6);
 		text("OH NO! \nYou took too long. The ogre woke up and ate you.... \nYou're no use to use now that you're dead!",0,0);
+		pop();
+
+		push();
+		fill(150);
+		noStroke();
+		textAlign(RIGHT);
+		textSize(20);
+		translate(width*0.9, height*0.9);
+		text("Reload to restart your quest.",0,0);
 		pop();
 	}
 }
