@@ -1,6 +1,11 @@
+//draw flashlight and sync to mouse
+//buckets go faster..
+//music??
+
 state = 0;
 
 var b, g;
+// var bkgMusic;
 var bridge;
 var bucket;
 var leftHeld, rightHeld, upHeld, downHeld;
@@ -24,6 +29,8 @@ var buckets = [];
 
 function preload() {
 
+	// bkgMusic = loadSound("epic_audio.mp3");
+
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
 	proph1 = loadImage("Raghnall.png");
@@ -42,6 +49,9 @@ function setup() {
 	buckets.push(new Bucket(width*0.2,height*0.65));
 
 	g = new Galaxy(new p5.Vector(width/2, height/2));
+
+	// bkgMusic.setVolume(0.5);
+	// bkgMusic.play();
 }
 
 function draw() {
@@ -400,41 +410,6 @@ function winBaz() {
 }
 
 function loseBaz() {
-
-	if (wrongkey == true) {
-		push();
-		fill(0);
-		rectMode(CENTER);
-		translate(width/2,height/2);
-		rect(0,0,1280,720);
-		pop();
-
-		push();
-		fill(255,0,0);
-		noStroke();
-		textAlign(CENTER);
-		textSize(75);
-		translate(width/2,height/2);
-    text("YOU FAILED!",0,0);
-		pop();
-
-		push();
-		fill(255);
-		textAlign(CENTER);
-		textSize(25);
-		translate(width/2, height*0.6);
-		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
-		pop();
-
-		push();
-		fill(150);
-		noStroke();
-		textAlign(RIGHT);
-		textSize(20);
-		translate(width*0.9, height*0.9);
-		text("Reload to Restart your Quest.",0,0);
-		pop();
-	}
 
   if (timer2 == 0) {
 		push();
