@@ -699,14 +699,13 @@ Galaxy.prototype.run = function() {
 state = 0;
 
 var b, g;
-var bkgMusic;
+// var bkgMusic;
 var bridge;
 var bucket;
 var leftHeld, rightHeld, upHeld, downHeld;
 var proph1;
 var proph2;
 var proph3;
-var riddleFont;
 var sword;
 var tower;
 var uKey,zKey;
@@ -723,7 +722,7 @@ var buckets = [];
 
 function preload() {
 
-	bkgMusic = loadSound("epic_audio.mp3");
+	// bkgMusic = loadSound("epic_audio.mp3");
 
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
@@ -744,8 +743,8 @@ function setup() {
 
 	g = new Galaxy(new p5.Vector(width/2, height/2));
 
-	bkgMusic.setVolume(0.5);
-	bkgMusic.play();
+// 	bkgMusic.setVolume(0.5);
+// 	bkgMusic.play();
 }
 
 function draw() {
@@ -1279,23 +1278,6 @@ function keyPressed() {
 		state = 2;
 		}
 	}
-
-	if(state == 2) {
-	if (key === "Enter"){
-				state = 1;
-			}
-	}
-
-	if(state == 3) {
-	if (key === "Enter"){
-				state = 1;
-			}
-	}
-
-	if(state == 4) {
-	if (key === "Enter"){
-				state = 1;
-			}
 	}
 
 	if (key === "ArrowUp"){upHeld = true; }
