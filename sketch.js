@@ -1,7 +1,3 @@
-//draw flashlight and sync to mouse
-//buckets go faster..
-//music??
-
 state = 0;
 
 var b, g;
