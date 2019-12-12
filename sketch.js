@@ -5,7 +5,6 @@
 state = 0;
 
 var b, g;
-var bkgMusic;
 var bridge;
 var bucket;
 var leftHeld, rightHeld, upHeld, downHeld;
@@ -29,8 +28,6 @@ var buckets = [];
 
 function preload() {
 
-	bkgMusic = loadSound("epic_audio.mp3");
-
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
 	proph1 = loadImage("Raghnall.png");
@@ -49,9 +46,6 @@ function setup() {
 	buckets.push(new Bucket(width*0.2,height*0.65));
 
 	g = new Galaxy(new p5.Vector(width/2, height/2));
-
-	bkgMusic.setVolume(0.5);
-	bkgMusic.play();
 }
 
 function draw() {
