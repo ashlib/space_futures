@@ -1,4 +1,3 @@
-
 //draw flashlight and sync to mouse
 //buckets go faster..
 //music??
@@ -15,8 +14,9 @@ var proph3;
 var riddleFont;
 var sword;
 var tower;
+var uKey,zKey;
 var x,y;
-var zKey;
+
 
 var allBucketsComplete = false;
 var bucketComplete = false;
@@ -27,8 +27,6 @@ var timer3 = 30;
 var buckets = [];
 
 function preload() {
-
-	riddleFont = loadFont("ComicRelief.ttf");
 
 	bridge = loadImage("bridge.png");
 	bucket = loadImage("bucket.png");
@@ -159,9 +157,9 @@ function planets() {
 	push();
 	fill(255,0,0);
 	stroke(255,0,0);
-	textSize(20);
-	translate(width*0.85, height*0.95);
-	text("Press 'z' to enter cryosleep as you journey \nto Ragnahla to begin your first challenge", 0,0);
+	textSize(30);
+	translate(width*0.5, height*0.95);
+	text("Press 'z' to enter cryosleep and begin your first challenge", 0,0);
 	pop();
 }
 
@@ -187,23 +185,21 @@ function ragChal() {
 	pop();
 
 	push();
-	fill(255,245,0);
-	stroke(255,245,0);
+	fill(255);
+	noStroke(255);
 	textAlign(CENTER);
 	textSize(20);
-	textFont(riddleFont);
-	translate(width*0.85, height*0.5)
-	text("A murderer is condemned to death. \nHe has to choose between \nthree rooms. The first is full of \nraging fires, the second is full of \nassassins with loaded guns, and the \nthird is full of lions that haven't \neaten in 3 years. Which room is \nsafest for him?",0,0);
+	translate(width*0.85, height*0.25)
+	text("I'm in you, \n\nBut not in him, \n\nI go up, \n\nBut not down, \n\nI'm in the colosseum, \n\nBut not a tower, \n\nI'm in a puzzle, \n\nBut not a riddle.",0,0);
 	pop();
 
 	push();
-	fill(0);
+	fill(255,255,0);
 	stroke(0);
 	textAlign(CENTER);
-	textSize(20);
-	textFont(riddleFont);
-	translate(width*0.85, height*0.85)
-	text("1. Fires     2. Assassins   3. Lions",0,0);
+	textSize(18);
+	translate(width*0.6, height*0.95)
+	text("Use your magical device \nto type the answer.",0,0);
 	pop();
 
 	push();
@@ -221,7 +217,9 @@ function ragChal() {
 
 function winRag() {
 
-	if(key === '3') {
+	if(key === 'u') {
+		uKey = true;
+
 		push();
 		fill(0);
 		rectMode(CENTER);
@@ -248,79 +246,38 @@ function winRag() {
 
 		timer1 = 3600;
 	}
-	}
+
+	if (uKey == false) {
+
+		push();
+		fill(255,0,0);
+		noStroke();
+		textAlign(CENTER);
+		textSize(75);
+		translate(width/2,height/2);
+    text("YOU FAILED!",0,0);
+		pop();
+
+		push();
+		fill(255);
+		textAlign(CENTER);
+		textSize(25);
+		translate(width/2, height*0.6);
+		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
+		pop();
+
+		push();
+		fill(150);
+		noStroke();
+		textAlign(RIGHT);
+		textSize(20);
+		translate(width*0.9, height*0.9);
+		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
+		pop();
+		}
+}
 
 function loseRag() {
-
-	if(key === '1') {
-		push();
-		fill(0);
-		rectMode(CENTER);
-		translate(width/2,height/2);
-		rect(0,0,1280,720);
-		pop();
-
-		push();
-		fill(255,0,0);
-		noStroke();
-		textAlign(CENTER);
-		textSize(75);
-		translate(width/2,height/2);
-    text("YOU FAILED!",0,0);
-		pop();
-
-		push();
-		fill(255);
-		textAlign(CENTER);
-		textSize(25);
-		translate(width/2, height*0.6);
-		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
-		pop();
-
-		push();
-		fill(150);
-		noStroke();
-		textAlign(RIGHT);
-		textSize(20);
-		translate(width*0.9, height*0.9);
-		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
-		pop();
-		}
-
-	if(key === '2') {
-		push();
-		fill(0);
-		rectMode(CENTER);
-		translate(width/2,height/2);
-		rect(0,0,1280,720);
-		pop();
-
-		push();
-		fill(255,0,0);
-		noStroke();
-		textAlign(CENTER);
-		textSize(75);
-		translate(width/2,height/2);
-    text("YOU FAILED!",0,0);
-		pop();
-
-		push();
-		fill(255);
-		textAlign(CENTER);
-		textSize(25);
-		translate(width/2, height*0.6);
-		text("Whelp... you lost your mind to the grimiore. Guess you weren't the Chosen One after all...",0,0);
-		pop();
-
-		push();
-		fill(150);
-		noStroke();
-		textAlign(RIGHT);
-		textSize(20);
-		translate(width*0.9, height*0.9);
-		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
-		pop();
-		}
 
 	if (timer1 == 0) {
 		push();
@@ -353,7 +310,7 @@ function loseRag() {
 		textAlign(RIGHT);
 		textSize(20);
 		translate(width*0.9, height*0.9);
-		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
+		text("Reload to Restart your Quest.",0,0);
 		pop();
 	}
 }
@@ -368,6 +325,15 @@ function bazChal() {
 	textSize(18);
 	translate(width*0.15, height*0.075)
 	text("Chosen One, the people of Bazalis need help stocking \nup on resources before the Age of Darkness is upon us. \nHelp them carry water from the Well of Kindness. \nBe careful! The bridge is VERY old!",0,0);
+	pop();
+
+	push();
+	fill(125,200,25);
+	noStroke(0);
+	textAlign(LEFT);
+	textSize(16);
+	translate(width*0.15, height*0.5)
+	text("The arrows on your magical device should \nhelp you with this challenge.",0,0);
 	pop();
 
 	push();
@@ -399,7 +365,7 @@ function winBaz() {
 		}
 	}
 
-	if (numberOfCompleteBuckets >= 5) {
+	if (numberOfCompleteBuckets >= 3) {
 		allBucketsComplete = true;
 	}
 
@@ -465,7 +431,7 @@ function loseBaz() {
 		textAlign(RIGHT);
 		textSize(20);
 		translate(width*0.9, height*0.9);
-		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
+		text("Reload to restart your quest.",0,0);
 		pop();
 	  }
 }
@@ -544,7 +510,7 @@ function winThad() {
 		textAlign(RIGHT);
 		textSize(20);
 		translate(width*0.9, height*0.9);
-		text("Reload to restart",0,0);
+		text("Reload to restart your quest.",0,0);
 		pop();
 
 		timer3 = 3600;
@@ -555,6 +521,10 @@ function winThad() {
 function loseThad() {
 
   if (timer3 == 0) {
+		failOn = true;
+	}
+
+	if (failOn == true) {
 		push();
 		fill(0);
 		rectMode(CENTER);
@@ -585,7 +555,7 @@ function loseThad() {
 		textAlign(RIGHT);
 		textSize(20);
 		translate(width*0.9, height*0.9);
-		text("Click ENTER to be brought back to life \nand restart your quest.",0,0);
+		text("Reload to restart your quest.",0,0);
 		pop();
 	}
 }
@@ -619,7 +589,6 @@ function keyPressed() {
 	if(state == 3) {
 	if (key === "Enter"){
 				state = 1;
-				timer2=30;
 			}
 	}
 
